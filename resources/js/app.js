@@ -87,7 +87,7 @@ $('#area').on( 'change', function() {
 });
 
 $( '#add-form' ).on( 'submit', function( e ) {
-
+    console.log( '123' );
     e.preventDefault();
 
     var formData = new FormData( $(this)[0])
