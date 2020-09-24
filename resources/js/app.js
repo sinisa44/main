@@ -1,5 +1,7 @@
-$( document ).on( 'ready', function() {
-  
+
+
+
+
     $( '#tokenize-1' ).tokenize2({
      sortable: true
     });
@@ -36,16 +38,16 @@ $( document ).on( 'ready', function() {
 
 
 
-$('#category').on( 'change', function() {
+$('#category').change(  function() {
     $.ajax({
-        url: 'ajax.php',
+        url: 'app/ajax/ajax.php',
         method: 'POST',
         data: {
             type: 'category',
             data: $('#category').val()
         },
         success(response) {
-
+            console.log(response);
             var data = JSON.parse(response);
             $( '#subcategory' ).children('option').remove();
             for (var data of Object.entries(data)) {
@@ -61,8 +63,9 @@ $('#category').on( 'change', function() {
 });
 
 $('#area').on( 'change', function() {
+
     $.ajax({
-        url: 'ajax.php',
+        url: 'app/ajax/ajax.php',
         method: 'POST',
         data: {
             type: 'area',
@@ -108,4 +111,4 @@ $( '#add-form' ).on( 'submit', function( e ) {
     )
 })
 
-});
+
