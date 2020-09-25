@@ -1,6 +1,6 @@
 <?php
 
-require_once( '../config.php' );
+require_once( '../database.php' );
 
 
     $image_1 = $_FILES['image_1']['name'];
@@ -55,7 +55,7 @@ require_once( '../config.php' );
         }
     }
 
-    $query = "INSERT INTO cegek (Naziv_Firme, Opstina, mesto, Kategorija, Podkategorija, Pod_Delatnost, image_1, image_2, Facebook, Web_Page, Prosireni_Podaci, O_nama, Radno_Vreme, Galerija, Podaci_Firme, Gde_smo, Kontakt, Instagram, Youtube, News_Letter, RSS, Reklam_1, Reklam_2, Email, Radno_Vreme_2) VALUES ('$Naziv_Firme', '$Opstina', '$mesto', '$Kategorija', '$Podkategorija', '$Pod_Delatnost', '$image_1', '$image_2', '$Facebook', '$Web_Page', '$Prosireni_Podaci', '$O_nama', '$Radno_Vreme', '$Galerija', '$Podaci_Firme', '$Gde_smo', '$Kontakt', '$Instagram', '$Youtube', '$News_Letter', '$RSS', '$Reklam_1', '$Reklam_2', '$Email', '$Radno_Vreme_2')";
+    $query = "INSERT INTO cegek (naziv_firme, opstina, mesto, kategorija, podkategorija, pod_delatnost, slika_1, slika_2, facebook, web_page, prosireni_podaci, o_nama, radno_vreme, galerija, podaci_firme, gde_smo, kontakt, instagram, youtube, news_letter, RSS,email, radno_vreme_1) VALUES ('$Naziv_Firme', '$Opstina', '$mesto', '$Kategorija', '$Podkategorija', '$Pod_Delatnost', '$image_1', '$image_2', '$Facebook', '$Web_Page', '$Prosireni_Podaci', '$O_nama', '$Radno_Vreme', '$Galerija', '$Podaci_Firme', '$Gde_smo', '$Kontakt', '$Instagram', '$Youtube', '$News_Letter', '$RSS', '$Reklam_1', '$Reklam_2', '$Email', '$Radno_Vreme_2')";
     
     //    $res = mysqli_query( $connection, $query );
 

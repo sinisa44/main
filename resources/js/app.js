@@ -87,14 +87,14 @@ $('#area').on( 'change', function() {
 });
 
 $( '#add-form' ).on( 'submit', function( e ) {
-    console.log( '123' );
+   
     e.preventDefault();
 
     var formData = new FormData( $(this)[0])
     formData.set( 'Pod_Delatnost', $( '#tokenize-1').val().join( ','))
     $.ajax(
         {
-            url: 'insert.php',
+            url: 'app/ajax/insert.php',
             method: 'POST',
             
             data:  formData ,

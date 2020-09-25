@@ -1,6 +1,13 @@
+<?php
+    if(  $_SESSION['user']['is_admin'] !== '1' ) {
+        header( 'location:index.php' );
+    }
+?>
+
+
 <div class="row justify-content-center">
             <div class="col-md-6">
-                <form action="insert.php" method="POST" enctype="multipart/form-data" id="add-form">
+                <form action="app/ajax/insert.php" method="POST" enctype="multipart/form-data" id="add-form">
                 <hr class="new5">
                     <div class="form-group">
                         <label for="name">Naziv Firme</label>
