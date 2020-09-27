@@ -17,14 +17,6 @@
                         <label for="name">Email</label>
                         <input name="Email" type="mail" class="form-control" id="exampleInputEmail1">
                     </div>
-                    <div class="form-group">
-                        <label for="name">Reklam leve strane</label>
-                        <input name="Reklam_2" type="text" class="form-control" id="exampleInputEmail1">
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Reklam srednje strane</label>
-                        <input name="Reklam_1" type="text" class="form-control" id="exampleInputEmail1">
-                    </div>
                     <hr class="new5">
                     <div class="form-group">
                         <label for="website">Web Page</label>
@@ -77,10 +69,6 @@
                         <label for="youtube">Youtube</label>
                         <input type="text" name="Youtube" class="form-control">
                     </div>
-
-
-
-
                     <div class="form-group">
                         <label for="newsletter">News Letter:</label>
                         <input type="text" name="News_Letter" class="form-control">

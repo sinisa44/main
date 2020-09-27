@@ -90,8 +90,10 @@ $( '#add-form' ).on( 'submit', function( e ) {
    
     e.preventDefault();
 
-    var formData = new FormData( $(this)[0])
-    formData.set( 'Pod_Delatnost', $( '#tokenize-1').val().join( ','))
+    var formData = new FormData( $(this)[0]);
+    formData.set( 'Pod_Delatnost', $( '#tokenize-1').val().join( ',') )
+
+    // console.log(formData);
     $.ajax(
         {
             url: 'app/ajax/insert.php',

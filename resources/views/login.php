@@ -35,6 +35,7 @@
         while( $row = mysqli_fetch_assoc( $res ) ) {
             if( password_verify( $password, $row['password'] ) ) {
              $_SESSION['user']['token'] = $row['token'];
+             $_SESSION['user']['id'] = $row['id'];
              $_SESSION['user']['login'] = true;
              $_SESSION['user']['is_admin'] = $row['is_admin'];
 
