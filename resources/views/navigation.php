@@ -46,7 +46,7 @@
                         <a class="btn btn-outline-light my-2 mr-1 my-sm-0" href="?page=update&p_id=<?php echo $page_id; ?>">Azuriraj</a>
                     </li>
 
-                <?php endif;  if( $_SESSION['user']['login'] == true ) :?>
+                <?php elseif( $_SESSION['user']['login'] == true ) :?>
 
                 <li class="nav-item">
                     <a class="btn btn-outline-light my-2 mr-1 my-sm-0" href="?page=insert">Novi Unos</a>

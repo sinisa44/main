@@ -11,7 +11,6 @@
         $row = mysqli_fetch_assoc( $res );
     }
 
-    var_dump( $row );
 ?>
 
 <div class="rom justify-content-center">
@@ -119,21 +118,21 @@
 
         <div class="form-group">
             <label for="Kategorija">Kategorija</label>
-            <select name="Kategorija" id="category" class="form-control">
+            <select name="Kategorija"  class="form-control">
                 <option value="<?php echo $row['kategorija']; ?>" selected><?php echo $row['kategorija']; ?></option>
                     <?php
-                    $res = mysqli_query($db, 'SELECT * FROM category');
+                    $ress = mysqli_query($db, 'SELECT * FROM category');
 
-                    while ($row = mysqli_fetch_assoc( $res ) ) : ?>
-                        <option value="<?php echo $row['name']  ?>"> <?php echo $row['name'] ?></option>
-                    <?php endwhile ?>
+                    while ($rows = mysqli_fetch_assoc( $ress ) ) : ?>
+                        <option value="<?php echo $rows['name'];  ?>"> <?php echo $rows['name']; ?></option>
+                    <?php endwhile; ?>
             </select>
         </div>
-
+                        
         <div class="form-group">
             <label for="Podkategorija">Podkategorija</label> 
-            <select name="Podkategorija" id="subcategory" class="form-control">
-            <option value="<?php echo $row['podkategorija']; ?>" selected><?php echo $row['podkategorija']; ?></option>
+            <select name="Podkategorija" class="form-control">
+            <option value="<?php var_dump( $row['pod_kategorija'] ); ?>" selected><?php echo $row['pod_kategorija'] ?></option>
             </select>
         </div>
 
@@ -143,10 +142,10 @@
             <select name="Pod_Delatnost" id="tokenize-1" class="form-control" multiple>
                 <option value="<?php echo $row['pod_delatnost'] ?>" selected><?php echo $row['pod_delatnost'] ?></option>
                 <?php
-                    $res = mysqli_query( $db , 'SELECT * FROM podkategorija' );
+                    $resa = mysqli_query( $db , 'SELECT * FROM podkategorija' );
 
-                    while( $row = mysqli_fetch_assoc( $res ) ) : ?> 
-                        <option value="<?php echo $row['podkategorija']; ?>"><?php echo $row['podkategorija']; ?></option>
+                    while( $roww = mysqli_fetch_assoc( $resa ) ) : ?> 
+                        <option value="<?php echo $roww['podkategorija']; ?>"><?php echo $roww['podkategorija']; ?></option>
                 <?php endwhile ?>
             </select>
         </div>
