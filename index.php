@@ -39,6 +39,9 @@ session_start();
             case 'admin':
                 $page = 'admin';
             break;
+            case 'update':
+                $page = 'update';
+            break;
             default:
                 $page = 'home';
                 break;

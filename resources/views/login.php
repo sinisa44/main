@@ -4,6 +4,8 @@
     if( isset( $_GET['confirmation'] ) ) {
         $confirmation = $_GET['confirmation'];
 
+        unset( $_SESSION['register_message'] );
+
         $query = "SELECT * FROM users where token = '$confirmation'";
 
         $res = mysqli_query( $connection, $query );
@@ -58,7 +60,7 @@
     <?php if( isset($conf) ) : ?>
     
         <div class="alert alert-success mt-2" role="alert">
-        <p class="text-center">Uspešno ste se registrovali</p>
+             <p class="text-center">Uspešno ste se registrovali</p>
         </div>
 
     <?php endif; ?>

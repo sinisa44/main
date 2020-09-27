@@ -1,9 +1,10 @@
 <?php
-    if(  $_SESSION['user']['is_admin'] !== '1' ) {
+    if( ! $_SESSION['user']['login'] ) {
         header( 'location:index.php' );
     }
-?>
 
+ 
+?>
 
 <div class="row justify-content-center">
             <div class="col-md-6">

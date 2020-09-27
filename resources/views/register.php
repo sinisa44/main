@@ -12,7 +12,7 @@
         $email    = mysqli_real_escape_string( $connection, $_POST['email'] );
         $token = rand();
         $token = password_hash( $token, PASSWORD_DEFAULT );
-        $url  = "http://" . $_SERVER[ 'SERVER_NAME' ] . "main/index.php?page=login?confirmation=" . $token;
+        $url  = "http://" . $_SERVER[ 'SERVER_NAME' ] . "/main/index.php?page=login&confirmation=" . $token;
         $message   = "Hi " . $name . " please confirm your email click on the below link ". $url ;
         $status = 0;
 
@@ -20,7 +20,8 @@
        
         if( mysqli_query( $connection, $query ) ) {
            verificationEmailSend( $email, $message );
-           header( 'location:index.php?page=login&confirmation='. $token );
+        //    header( 'location:index.php?page=login&confirmation=Molimo vas' );
+            $_SESSION['register_message'] = 'Molimo Vas da pogledate vas E-mail';
         }else{
             echo "Error: " . $query . "<br>" . mysqli_error($connection);
         }
@@ -29,6 +30,13 @@
 
 <div class="row justify-content-center">
     <div class="col-sm-6 mt-5 bg-primary" >
+
+        <?php if( isset( $_SESSION['register_message'] ) ) : ?>
+            <div class="alert alert-success mt-2" role="alert">
+                 <p class="text-center"><?php echo $_SESSION['register_message']; ?></p>
+            </div>
+        <?php endif ; ?>
+
         <h4 class="text-center" style="color:white; text-decoration:underline;">Registracija</h4>
         <form action=""  method="POST">
         <div class="form-group">

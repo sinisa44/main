@@ -22,17 +22,37 @@
                 </li>
             <?php endif; ?>
 
-            <?php if( ! isset( $_SESSION['user']['login'] ) ) : ?>
-               
                 <li class="nav-item">
                     <a class="btn btn-outline-light my-2 mr-1 my-sm-0" href="?page=login">Prijava</a>
                 </li>
-              
-            <?php else : ?>
+            
+            <?php if(  isset( $_SESSION['user']['login'] ) ) : ?>
+                <?php 
+                    $user_id = $_SESSION['user']['id'];
+
+                    $query = "SELECT * FROM cegek where user_id = $user_id";
+                    // print_r( $query );
+                    if( $res = mysqli_query( $connection, $query ) ) {
+                        $row = mysqli_fetch_assoc( $res );
+
+                       if( $row ) {
+                           $page_id = $row['id'];
+                       }
+                    }
+
+                    if( isset( $page_id ) ) :
+                ?>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light my-2 mr-1 my-sm-0" href="?page=update&p_id=<?php echo $page_id; ?>">Azuriraj</a>
+                    </li>
+
+                <?php endif;  if( $_SESSION['user']['login'] == true ) :?>
+
                 <li class="nav-item">
                     <a class="btn btn-outline-light my-2 mr-1 my-sm-0" href="?page=insert">Novi Unos</a>
                 </li>
-            <?php endif; ?>
+            <?php endif; endif; ?>
+
             <li class="nav-item">
                 <a class=" btn btn-outline-light my-2 mr-1 my-sm-0" href="?page=register">Registracija</a>
             </li>
