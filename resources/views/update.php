@@ -17,6 +17,7 @@
     <h1>Ažuriranje</h1>
     <div class="col-md-6">
         <form action="app/ajax/update.php" method="POST" id="update-form" enctype="multipart/form-data">
+        <input type="hidden" name="post_id" value="<?php echo $row['id'] ?>">
 
         <div class="form-group">
             <label for="name">Naziv Firme</label>
@@ -151,24 +152,16 @@
             </select>
         </div>
 
-        <div class="form-group">
-            <label for="widedata">00-24</label>
-            <select name="Radno_Vreme_2" id="" class="form-control">
-                <option value=""></option>
-                <option value="00-24">00-24</option>
-                
-            </select>
-        </div>
-
         <hr class="new5">
 
         <div class="form-group">
             <label for="image_1">Visit card Page 1</label>
-            <input type="file" class="form-control" name="image_1" value="<?php echo $row['slika_1'] ?>">
+            <input type="file" class="form-control" name="image_1" value=""><span><?php echo $row['slika_1'] ?></span>
         </div>
         <div class="form-group">
             <label for="image_2">Visit card Page 2</label>
             <input type="file" class="form-control" name="image_2" value="<?php echo $row['slika_2']; ?>">
+            <span><?php echo $row['slika_2']; ?></span>
         </div>
 
         <hr class="new5">
@@ -176,7 +169,7 @@
         <div class="form-group">
             <label for="widedata">Prošireni podaci</label>
             <select name="Prosireni_Podaci" id="" class="form-control">
-                <option value="<?php echo $row['prosireni_podaci']; ?>" selected><?php echo $row['prosireni_podaci']; ?></option>
+                <option value="<?php echo $row['prosireni_podaci']; ?>" selected disabled><?php echo strtoupper( $row['prosireni_podaci'] ); ?></option>
                 <option value="ne">NE</option>
                 <option value="da">Da</option>
                 
