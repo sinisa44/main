@@ -17,7 +17,7 @@
             <div class="row mt-4 ">
                 <div class="col-sm-12">
                     <h1 class="text-center text-light bg-dark">Mesto: <?php echo $row['mesto']; ?></h1>
-                    <h1  class="text-center text-light bg-dark">Delatnost: <?php echo $row['podkategorija']; ?></php></h1>
+                    <h1  class="text-center text-light bg-dark">Delatnost: <?php echo $row['pod_kategorija']; ?></php></h1>
                     <h1  class="text-center text-light bg-dark">Naziv firme: <?php echo $row['naziv_firme']; ?></h1>
 
                     <?php if(  $row['client_type'] !== '1'  && isset( $_SESSION['user']['login'])) : ?>

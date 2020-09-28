@@ -113,4 +113,25 @@ $( '#add-form' ).on( 'submit', function( e ) {
     )
 })
 
+$('#update-form' ).on( 'submit', function( e ) {
+    e.preventDefault();
 
+    // var formData = new FormData( $(this)[0] );
+    var formData = $( '#update-form' ).serializeArray(); 
+
+
+
+    $.ajax(
+        {
+            url: 'app/ajax/update.php',
+            method: 'POST',
+            data: formData,
+            success ( response ) {
+                console.log( response );
+            },
+            error( error ) {
+                console.log( error );
+            }
+        }
+    )
+});

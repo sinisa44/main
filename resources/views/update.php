@@ -13,9 +13,10 @@
 
 ?>
 
-<div class="rom justify-content-center">
-    <div class="col-md-6 ">
-        <form action="app/ajax/update.php" method="POST" id="update-form">
+<div class="row justify-content-center">
+    <h1>Ažuriranje</h1>
+    <div class="col-md-6">
+        <form action="app/ajax/update.php" method="POST" id="update-form" enctype="multipart/form-data">
 
         <div class="form-group">
             <label for="name">Naziv Firme</label>
