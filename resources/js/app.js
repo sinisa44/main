@@ -127,7 +127,7 @@ $('#update-form' ).on( 'submit', function( e ) {
             method: 'POST',
             data: formData,
             success ( response ) {
-                console.log( response );
+                $('.update-modal').modal();
             },
             error( error ) {
                 console.log( error );
