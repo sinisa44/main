@@ -12,7 +12,7 @@ if( isset( $_POST['search'] ) ) {
             OR opstina LIKE '%".$search."%' 
             OR mesto LIKE '%".$search."%' 
             OR kategorija LIKE '%".$search."%' 
-            OR podkategorija LIKE '%".$search."%'
+            OR pod_kategorija LIKE '%".$search."%'
             ";
 } else {
     $query = 'SELECT * FROM cegek ORDER BY id';
@@ -29,7 +29,7 @@ while( $row = mysqli_fetch_assoc( $result ) ) {
         <div class=" row mt-4">
             <div class="col-sm-12">
                 <h1 class="text-center text-light bg-dark">Mesto: '. $row['mesto'].'</h1>
-                <h1 class="text-center text-light bg-dark">Delatnost: '.$row['podkategorija']. '</h1>
+                <h1 class="text-center text-light bg-dark">Delatnost: '.$row['pod_kategorija']. '</h1>
                 <h1 class="text-center text-light bg-dark">Naziv Firme: '.$row['naziv_firme'].'</h1>
 
                 '. ($row['client_type'] !== 1 ? 
