@@ -24,7 +24,7 @@
     }
 
 
-    if( isset( $_POST['login'] ) ) {
+    if( isset( $_POST['login'] ) && isset( $_POST['email'] ) && isset( $_POST['password'] ) ) {
         $email = $_POST['email'];
         // $password = password_hash( $_POST['password'], PASSWORD_BCRYPT );
         $password = $_POST['password'];
@@ -34,7 +34,8 @@
         $res = mysqli_query( $connection, $find_user );
 
         if( mysqli_num_rows( $res ) > 0 ) {
-        while( $row = mysqli_fetch_assoc( $res ) ) {
+         $row = mysqli_fetch_assoc( $res ); 
+
             if( password_verify( $password, $row['password'] ) ) {
              $_SESSION['user']['token'] = $row['token'];
              $_SESSION['user']['id'] = $row['id'];
@@ -43,13 +44,13 @@
 
              header( 'location:index.php?page=home');
             }else {
-                echo 'nok';
+               $error = 'Greska pri prijavi, pokusajte ponovo';
             }
-        }
+        
     }
 
 
-    print_r( $_SESSION['user']);
+   
     }
 ?>
 
@@ -57,7 +58,11 @@
 
     <div class="col-sm-6 mt-5 bg-primary" >
 
-    <?php if( isset($conf) ) : ?>
+    <?php if( isset( $error ) ) : ?>
+        <div class="danger alert-danger mt-2" role="alert">
+            <p class="text-center"><?php echo $error; ?></p>
+        </div>
+    <?php endif; if( isset($conf) ) : ?>
     
         <div class="alert alert-success mt-2" role="alert">
              <p class="text-center">Uspešno ste se registrovali</p>
@@ -67,7 +72,7 @@
         
 
     <h4 class="text-center" style="color:white; text-decoration:underline;">Prijava</h4>
-    <form action="" method="post" class="bg-primary"">
+    <form action="" method="post" class="bg-primary">
         <div class="form-group">
             <label for="email" style="color:white">E-mail:</label>
             <input type="text" class="form-control" name="email">
