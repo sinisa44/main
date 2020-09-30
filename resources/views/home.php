@@ -3,7 +3,7 @@
 
         <div class="col-md-8">
             <h5 class="text-center text-light" style="text-decoration: underline;">Detaljna pretraga</h5>
-            <form action="" class="form form-inline" id="detail-search">
+            <form action="#" class="form form-inline" id="detail-search">
                 <div class="col-md-6">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">

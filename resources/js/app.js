@@ -1,7 +1,4 @@
 
-
-
-
     $( '#tokenize-1' ).tokenize2({
      sortable: true
     });
@@ -119,9 +116,6 @@ $('#update-form' ).on( 'submit', function( e ) {
 
     // var formData = new FormData( $(this)[0] );
     var formData = $( '#update-form' ).serializeArray(); 
-
-
-
     $.ajax(
         {
             url: 'app/ajax/update.php',
@@ -143,17 +137,18 @@ $('#detail-search').on( 'submit', function( e ) {
 
     var formData = $( '#detail-search' ).serializeArray();
 
-   $.ajax(
+    $.ajax(
        {
-           url: 'app/ajax/detail-search.php',
+           url: 'app/ajax/detail_search.php',
            method: 'POST',
            data: formData,
-           succes( response ) {
-               console.log(response);
+           success( response ) {
+               console.log( response );
            },
            error( error ) {
                console.log( error );
            }
        }
    )
+
 })
