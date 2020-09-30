@@ -144,10 +144,10 @@ if ($res = mysqli_query($connection, $query)) {
                 <select name="Pod_Delatnost" id="tokenize-1" class="form-control" multiple>
                     <option value="<?php echo $row['pod_delatnost'] ?>" selected><?php echo $row['pod_delatnost'] ?></option>
                     <?php
-                    $resa = mysqli_query($db, 'SELECT * FROM podkategorija');
+                    $resa = mysqli_query($db, 'SELECT * FROM subcategory');
 
                     while ($roww = mysqli_fetch_assoc($resa)) : ?>
-                        <option value="<?php echo $roww['podkategorija']; ?>"><?php echo $roww['podkategorija']; ?></option>
+                        <option value="<?php echo $roww['name']; ?>"><?php echo $roww['name']; ?></option>
                     <?php endwhile ?>
                 </select>
             </div>

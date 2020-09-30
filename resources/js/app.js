@@ -102,6 +102,7 @@ $( '#add-form' ).on( 'submit', function( e ) {
             data:  formData ,
             success( response) {
                 console.log(response);
+                $('.insert-modal').modal();
             },
             error( error ){
                 console.log(error);
@@ -135,3 +136,24 @@ $('#update-form' ).on( 'submit', function( e ) {
         }
     )
 });
+
+
+$('#detail-search').on( 'submit', function( e ) {
+    e.preventDefault();
+
+    var formData = $( '#detail-search' ).serializeArray();
+
+   $.ajax(
+       {
+           url: 'app/ajax/detail-search.php',
+           method: 'POST',
+           data: formData,
+           succes( response ) {
+               console.log(response);
+           },
+           error( error ) {
+               console.log( error );
+           }
+       }
+   )
+})

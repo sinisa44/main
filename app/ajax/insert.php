@@ -62,7 +62,7 @@ require_once( '../database.php' );
         opstina,
         mesto,
         kategorija,
-        podkategorija,
+        pod_kategorija,
         pod_delatnost,
         radno_vreme,
         slika_1,
