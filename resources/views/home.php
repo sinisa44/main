@@ -1,4 +1,4 @@
-<?php if (isset($_SESSION['user']['login'])) : ?>
+<?php if(isset($_SESSION['user']['login']) && $_SESSION['user']['login'] ) : ?>
     <div class="row mt-2 justify-content-center p-2 bg-secondary sticky-top" style="width:100%; margin:0 auto;">
 
         <div class="col-md-8">
