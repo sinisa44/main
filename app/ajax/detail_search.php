@@ -10,7 +10,8 @@ if( isset( $_POST['search'] ) ) {
                 OR mesto LIKE '%".$search."%'
                 OR kategorija LIKE '%".$search."%'
                 OR pod_kategorija LIKE '%".$search."%'
-                OR pod_delatnost LIKE '%".$search."%'";
+                OR pod_delatnost LIKE '%".$search."%'
+                OR instagram LIKE '%".$search."%'";
               
 
     if( $result = mysqli_query( $connection, $query ) ) {
