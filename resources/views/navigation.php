@@ -25,9 +25,13 @@ if (isset($_POST['logout'])) {
                 </li>
             <?php endif; ?>
 
-            <li class="nav-item">
-                <a class="btn btn-outline-light my-2 mr-1 my-sm-0" href="?page=login">Prijava</a>
-            </li>
+            <?php if (!isset($_SESSION['user']['login'])) : ?>
+                <li class="nav-item">
+                    <a class="btn btn-outline-light my-2 mr-1 my-sm-0" href="?page=login">Prijava</a>
+                </li>
+            <?php endif; ?>
+
+
 
             <?php if (isset($_SESSION['user']['login'])) : ?>
                 <?php
