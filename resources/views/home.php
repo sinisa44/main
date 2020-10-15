@@ -45,7 +45,9 @@
 <div id="content">
     <?php
 
-    while ($row = mysqli_fetch_array($results)) :  ?>
+    while ($row = mysqli_fetch_array($results)) :  
+    if( $row['dozvoljeno'] == 1 ) :
+    ?>
         <div class="border border-secondary mb-2 p-1 rounded-sm mt-4">
             <div class="row mt-4 ">
                 <div class="col-sm-12">
@@ -74,6 +76,6 @@
                 </div>
             </div>
         </div>
-    <?php endwhile; ?>
+        <?php endif; endwhile; ?>
 
 </div>

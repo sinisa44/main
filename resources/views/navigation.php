@@ -19,7 +19,7 @@ if (isset($_POST['logout'])) {
             <input id="search" class="form-control" type="search" placeholder="Brza pretraga" aria-label="Search" style="width: 400px;">
         </form>
         <ul class="navbar-nav  ml-auto">
-            <?php if (isset($_SESSION['user']['login']) && $_SESSION['user']['is_admin']) : ?>
+            <?php if (isset($_SESSION['user']['login']) && $_SESSION['user']['is_admin'] == 1 ) : ?>
                 <li class="nav-item">
                     <a class="btn btn-outline-light my-2 mr-1 my-sm-0" href="?page=admin">Admin</a>
                 </li>
