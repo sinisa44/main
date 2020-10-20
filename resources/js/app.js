@@ -18,8 +18,6 @@
                 //   console.log( response);
                 $( '#content' ).empty();
             
-   
-
                 $( '#content' ).html( response );
             
               },
@@ -154,3 +152,24 @@ $('#detail-search').on( 'submit', function( e ) {
    )
 
 })
+
+$('.btn-allow' ).on( 'click', function( e ) {
+    var dataId = $( this ).data( 'id' );
+
+    $.ajax(
+        {
+            url: 'app/ajax/ajax.php',
+            method: 'POST',
+            data: {
+                type: 'allow',
+                data: dataId
+            },
+            success( response ) {
+                console.log(response);
+            },
+            error( error ) {
+                console.log( error );
+            }
+        }
+    )
+});

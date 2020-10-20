@@ -4,7 +4,10 @@ require_once('./app/database.php');
 
 $query = 'SELECT * FROM cegek';
 
-$results = mysqli_query($connection, $query);
+$results = mysqli_query( $connection, $query );
+
+print_r( $_SESSION );
+
 ?>
 
 <!DOCTYPE html>

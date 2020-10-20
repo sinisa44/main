@@ -1,6 +1,11 @@
 <?php
 require_once('../database.php' );
 
+if( $_POST['type']  == 'allow' ) {
+    echo json_encode($_POST['data'] );
+    // echo '123';
+}
+
 if(  $_POST['type'] == 'category'  ) {
 
     $array = array();
