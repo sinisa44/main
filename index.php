@@ -6,8 +6,6 @@ $query = 'SELECT * FROM cegek';
 
 $results = mysqli_query( $connection, $query );
 
-print_r( $_SESSION );
-
 ?>
 
 <!DOCTYPE html>

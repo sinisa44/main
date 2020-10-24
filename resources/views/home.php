@@ -1,10 +1,18 @@
 <?php if(isset($_SESSION['user']['login']) && $_SESSION['user']['login'] ) : ?>
     <div class="row mt-2 justify-content-center p-2 bg-secondary sticky-top" style="width:100%; margin:0 auto;">
 
-        <div class="col-md-8">
+        <div class="col-md-10">
             <h5 class="text-center text-light" style="text-decoration: underline;">Detaljna pretraga</h5>
             <form action="#" class="form form-inline" id="detail-search">
-                <div class="col-md-6">
+            <div class="col-md-4">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Opstina:</span>
+                        </div>
+                        <input name="search" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"> <!--select  ??-->
+                    </div>
+                </div>
+                <div class="col-md-4">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Mesto:</span>
@@ -23,7 +31,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Pretraga:</span>
