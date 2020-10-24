@@ -9,7 +9,17 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Opstina:</span>
                         </div>
-                        <input name="location" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"> <!--select  ??-->
+                        <!-- <input name="location" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">  -->
+                        <?php
+                            $q = 'SELECT * FROM area';
+                            $r = mysqli_query( $connection, $q );
+                        ?>
+                        <select name="location" class="form-control">
+                            <?php while( $area= mysqli_fetch_assoc( $r )) : ?>
+                             
+                                <option value="<?php echo $area['name']; ?>"> <?php echo $area['name']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -19,13 +29,13 @@
                         </div>
 
                         <?php
-                            $query = 'SELECT * FROM area';
+                            $query = 'SELECT * FROM city';
                             $res = mysqli_query( $connection, $query );
                         ?>
                         <!-- <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"> -->
                         <select name="area" id="" class="form-control">
-                            <?php while( $area = mysqli_fetch_assoc( $res ) ) : ?>
-                                <option value="<?php echo $area['name']; ?>"><?php echo $area['name']; ?></option>
+                            <?php while( $city = mysqli_fetch_assoc( $res ) ) : ?>
+                                <option value="<?php echo $city['name']; ?>"><?php echo $city['name']; ?></option>
                             <?php endwhile;?>
                         </select>
                     </div>
