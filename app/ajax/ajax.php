@@ -2,8 +2,13 @@
 require_once('../database.php' );
 
 if( $_POST['type']  == 'allow' ) {
-    echo json_encode($_POST['data'] );
-    // echo '123';
+    $id = $_POST['data'];
+
+    $query = "UPDATE cegek SET dozvoljeno=1 where id='{$id}'";
+
+    if( $res = mysqli_query( $connection, $query ) ) {
+        echo json_encode( 'ok' );
+    }
 }
 
 if(  $_POST['type'] == 'category'  ) {

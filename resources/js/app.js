@@ -155,6 +155,9 @@ $('#detail-search').on( 'submit', function( e ) {
 
 $('.btn-allow' ).on( 'click', function( e ) {
     var dataId = $( this ).data( 'id' );
+    console.log( $(this ).parent().parent().attr( 'id' ));
+    var parentId = $( this ).parent().parent().attr( 'id' );
+    // $(this).parent().parent().remove();
 
     $.ajax(
         {
@@ -165,7 +168,8 @@ $('.btn-allow' ).on( 'click', function( e ) {
                 data: dataId
             },
             success( response ) {
-                console.log(response);
+                // $( '.btn-allow' ).parent().parent().remove();
+                $( '#'+parentId ).remove();
             },
             error( error ) {
                 console.log( error );

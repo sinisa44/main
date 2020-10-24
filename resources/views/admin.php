@@ -25,7 +25,7 @@
                 while( $aproved = mysqli_fetch_array( $aproved_q ) ) :
 
            ?>
-           <tr >
+           <tr id="tr-<?php echo $aproved['id']; ?>">
                <td><?php echo $aproved['id'] ?></td>
                <td><?php echo $aproved['naziv_firme']; ?></td>
                <td><?php echo $aproved['email']; ?></td>
