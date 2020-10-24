@@ -141,6 +141,7 @@ $('#detail-search').on( 'submit', function( e ) {
            method: 'POST',
            data: formData,
            success( response ) {
+            // console.log( response );
                $('#content').empty();
 
                $('#content').html(response);

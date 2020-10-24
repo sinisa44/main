@@ -2,10 +2,14 @@
 require_once( '../database.php' );
 
 if( isset( $_POST['search'] ) ) {
+
+
     $opstina = mysqli_real_escape_string($connection,$_POST['area']);
     $search = mysqli_real_escape_string($connection,$_POST['search']);
+    $mesto = mysqli_real_escape_string( $connection, $_POST['location'] );
     // $search = $_POST['search'];
     $query =  "SELECT * FROM cegek WHERE opstina = '".$opstina."'
+                AND mesto = '".$mesto."'
                 AND naziv_firme LIKE '%".$search."%'
                 OR mesto LIKE '%".$search."%'
                 OR kategorija LIKE '%".$search."%'

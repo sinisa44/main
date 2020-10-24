@@ -9,7 +9,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Opstina:</span>
                         </div>
-                        <input name="search" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"> <!--select  ??-->
+                        <input name="location" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"> <!--select  ??-->
                     </div>
                 </div>
                 <div class="col-md-4">
