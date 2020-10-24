@@ -4,9 +4,9 @@ require_once( '../database.php' );
 if( isset( $_POST['search'] ) ) {
 
 
-    $opstina = mysqli_real_escape_string($connection,$_POST['area']);
+    $opstina = mysqli_real_escape_string($connection,$_POST['location']);
     $search = mysqli_real_escape_string($connection,$_POST['search']);
-    $mesto = mysqli_real_escape_string( $connection, $_POST['location'] );
+    $mesto = mysqli_real_escape_string( $connection, $_POST['area'] );
     // $search = $_POST['search'];
     $query =  "SELECT * FROM cegek WHERE opstina = '".$opstina."'
                 AND mesto = '".$mesto."'

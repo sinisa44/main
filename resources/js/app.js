@@ -81,6 +81,32 @@ $('#area').on( 'change', function() {
     })
 });
 
+$('#area-select' ).on( 'change', function() {
+    $.ajax( {
+        url: 'app/ajax/ajax.php',
+        method: 'POST',
+        data:{
+            type:'area',
+            data: $('#area-select').val()
+        },
+        success( response ) {
+            // console.log(response);
+            var data = JSON.parse( response );
+
+            $('.cities-select' ).val( '' );
+            $('.cities-select' ).children( 'option' ).remove();
+            for( var data of Object.entries( data) ) {
+                // console.log(data[1].name);
+                var options = `<option value='${data[1].name}'>${data[1].name}</option>`;
+
+                $('.cities-select').append(options);
+             
+             
+            }
+        }
+    })
+});
+
 $( '#add-form' ).on( 'submit', function( e ) {
    
     e.preventDefault();

@@ -1,0 +1,3 @@
+     <?php while( $city = mysqli_fetch_assoc( $res ) ) : ?>
+                                <option value="<?php echo $city['name']; ?>"><?php echo $city['name']; ?></option>
+                            <?php endwhile;?>

@@ -14,9 +14,10 @@
                             $q = 'SELECT * FROM area';
                             $r = mysqli_query( $connection, $q );
                         ?>
-                        <select name="location" class="form-control">
+                        <select name="area" class="form-control" id="area-select">
+                        <option value="" selected disabled></option>
                             <?php while( $area= mysqli_fetch_assoc( $r )) : ?>
-                             
+                              
                                 <option value="<?php echo $area['name']; ?>"> <?php echo $area['name']; ?></option>
                             <?php endwhile; ?>
                         </select>
@@ -33,10 +34,8 @@
                             $res = mysqli_query( $connection, $query );
                         ?>
                         <!-- <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"> -->
-                        <select name="area" id="" class="form-control">
-                            <?php while( $city = mysqli_fetch_assoc( $res ) ) : ?>
-                                <option value="<?php echo $city['name']; ?>"><?php echo $city['name']; ?></option>
-                            <?php endwhile;?>
+                        <select name="location" id="" class="form-control cities-select" id="city-select">
+                                <select name="" id="" selected disabled></select>
                         </select>
                     </div>
                 </div>
