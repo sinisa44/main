@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2020 at 05:32 PM
+-- Generation Time: Oct 24, 2020 at 05:29 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -107,15 +107,21 @@ CREATE TABLE `cegek` (
   `news_letter` varchar(400) NOT NULL,
   `RSS` varchar(400) NOT NULL,
   `client_type` int(11) NOT NULL,
-  `user_id` int(255) DEFAULT NULL
+  `user_id` int(255) DEFAULT NULL,
+  `dozvoljeno` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cegek`
 --
 
-INSERT INTO `cegek` (`id`, `datum_cegregisztralas`, `naziv_firme`, `email`, `opstina`, `mesto`, `kategorija`, `pod_kategorija`, `pod_delatnost`, `radno_vreme`, `slika_1`, `slika_2`, `o_nama`, `radno_vreme_1`, `galerija`, `podaci_firme`, `gde_smo`, `kontakt`, `facebook`, `web_page`, `google_maps`, `prosireni_podaci`, `instagram`, `youtube`, `news_letter`, `RSS`, `client_type`, `user_id`) VALUES
-(6, '2020-09-27 12:05:06', 'test', 'sinisa@mail.com', 'Bečej', 'Bačko Petrovo Selo', ' Trgovina', 's', 'Šlep služba', '00-24', 'Bocor nevjegy1.jpg', 'Bocor nevjegy2.jpg', 'oasdasda', '00-24', 'galerija', 'test firma', 'becej', '123123', 'facebook.com', 'www.sinisa.com', '', 'ne', 'instagra.com', 'youtube.com', 'new', 'rss', 1, 7);
+INSERT INTO `cegek` (`id`, `datum_cegregisztralas`, `naziv_firme`, `email`, `opstina`, `mesto`, `kategorija`, `pod_kategorija`, `pod_delatnost`, `radno_vreme`, `slika_1`, `slika_2`, `o_nama`, `radno_vreme_1`, `galerija`, `podaci_firme`, `gde_smo`, `kontakt`, `facebook`, `web_page`, `google_maps`, `prosireni_podaci`, `instagram`, `youtube`, `news_letter`, `RSS`, `client_type`, `user_id`, `dozvoljeno`) VALUES
+(6, '2020-09-27 12:05:06', 'test', 'sinisa@mail.com', 'Bečej', 'Test', ' Trgovina', 's', 'Šlep služba', '00-24', 'Bocor nevjegy1.jpg', 'Bocor nevjegy2.jpg', 'oasdasda', '00-24', 'galerija', 'test firma', 'becej', '123123', 'facebook.com', 'www.sinisa.com', '', 'ne', 'instagra.com', 'youtube.com', 'new', 'rss', 1, 7, 1),
+(7, '2020-09-27 12:05:06', 'test', 'sinisa@mail.com', 'Bečej', 'Bačko Petrovo Selo', ' Trgovina', 's', 'Šlep služba', '00-24', 'Bocor nevjegy1.jpg', 'Bocor nevjegy2.jpg', 'oasdasda', '00-24', 'galerija', 'test firma', 'becej', '123123', 'facebook.com', 'www.sinisa.com', '', 'ne', 'instagra.com', 'youtube.com', 'new', 'rss', 1, 7, 1),
+(8, '2020-09-27 12:05:06', 'test', 'sinisa@mail.com', 'Bečej', 'Bačko Petrovo Selo', ' Trgovina', 's', 'Šlep služba', '00-24', 'Bocor nevjegy1.jpg', 'Bocor nevjegy2.jpg', 'oasdasda', '00-24', 'galerija', 'test firma', 'becej', '123123', 'facebook.com', 'www.sinisa.com', '', 'ne', 'instagra.com', 'youtube.com', 'new', 'rss', 1, 7, 0),
+(9, '2020-09-27 12:05:06', 'test', 'sinisa@mail.com', 'Bečej', 'Bačko Petrovo Selo', ' Trgovina', 's', 'Šlep služba', '00-24', 'Bocor nevjegy1.jpg', 'Bocor nevjegy2.jpg', 'oasdasda', '00-24', 'galerija', 'test firma', 'becej', '123123', 'facebook.com', 'www.sinisa.com', '', 'ne', 'instagra.com', 'youtube.com', 'new', 'rss', 1, 7, 0),
+(10, '2020-09-27 12:05:06', 'test', 'sinisa@mail.com', 'Bečej', 'Bačko Petrovo Selo', ' Trgovina', 's', 'Šlep služba', '00-24', 'Bocor nevjegy1.jpg', 'Bocor nevjegy2.jpg', 'oasdasda', '00-24', 'galerija', 'test firma', 'becej', '123123', 'facebook.com', 'www.sinisa.com', '', 'ne', 'instagra.com', 'youtube.com', 'new', 'rss', 1, 7, 0),
+(11, '2020-09-27 12:05:06', 'test', 'sinisa@mail.com', 'Bečej', 'Bačko Petrovo Selo', ' Trgovina', 's', 'Šlep služba', '00-24', 'Bocor nevjegy1.jpg', 'Bocor nevjegy2.jpg', 'oasdasda', '00-24', 'galerija', 'test firma', 'becej', '123123', 'facebook.com', 'www.sinisa.com', '', 'ne', 'instagra.com', 'youtube.com', 'new', 'rss', 1, 7, 0);
 
 -- --------------------------------------------------------
 
@@ -271,12 +277,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `token`, `status`, `is_admin`) VALUES
-(1, 'test', 'sinisa.miskovic@outlook.com', '$2y$10$lZ0Ihau5p.eDMV1T/rLRo.tC.6PsG4INYbCXLNTHVVPAg.m/hr.t.', '$2y$10$GbozjdCX2OWzXeB5kCx3euXp/G26mi7HVyUBADuEB1IpIwyP7hxX6', 1, NULL),
+(1, 'test', 'sinisa.miskovic@outlook.com', '$2y$10$lZ0Ihau5p.eDMV1T/rLRo.tC.6PsG4INYbCXLNTHVVPAg.m/hr.t.', '$2y$10$GbozjdCX2OWzXeB5kCx3euXp/G26mi7HVyUBADuEB1IpIwyP7hxX6', 1, 1),
 (2, 'test', 'sinisa.miskovic@outlook.com', '$2y$10$ZhRlyYZnTcEWbmuxT3k/reo67vJ6Tjxe2.IaSM0HXN1ZXxA8AZGce', '$2y$10$8CaSf6Em91lulyvZaZALkusEtp6GVE2QkEN7cyqeOn2CNfRvN6z9m', 0, NULL),
 (3, 'test', 'sinisa.miskovic@outlook.com', '$2y$10$8pGHVNiTjtKraviCJTBfyONeIPZXS.qifSvkfbkrrXp24ATYTj3G.', '$2y$10$KIQbrOrcjCsyb3D9Vqc0BeEyf1tCJZ71YI0RbczCW1z3hGbdqOBUO', 0, NULL),
 (4, 'test', 'sinisa.miskovic@outlook.com', '$2y$10$Km45sT8G6Y41nlci9KkeWOu6Gi8GQAKE1FB8VOML8IZLpjHXWsBPW', '$2y$10$9MS6rJrc8RO.bkfJ/KtjsOwPqKxiP1uV/lOchjwdDcxNFKGEjLEHW', 1, NULL),
 (5, 'test', 'sinisa.miskovic@outlook.com', '$2y$10$LumSIxtIxNxXz3wgHVVjgeuWi802063.BJ2I37Wqgc5E8w23jPusK', '$2y$10$6P.0k1E2aaIcOR6ylA5sHua8Lxb8e58UqHczldvTMT29kS/Ywp0Sm', 0, NULL),
-(6, 'sinisa', 'sinisa.miskovic@outlook.com', '$2y$10$QmuFWlR6EsKdK0oYMuQT2Ox7wErCzKBjSGcS7z5uPK/YijrFqUvA6', '$2y$10$5bCo.Wl81UG1Da7D1D7m1ekKvydZXP9y.jtS8GNa.RjiF4QILu2dC', 1, NULL),
+(6, 'sinisa', 'sinisa.miskovic@outlook.com', '$2y$10$QmuFWlR6EsKdK0oYMuQT2Ox7wErCzKBjSGcS7z5uPK/YijrFqUvA6', '$2y$10$5bCo.Wl81UG1Da7D1D7m1ekKvydZXP9y.jtS8GNa.RjiF4QILu2dC', 1, 1),
 (7, 'sinisa 1', 'sinisa.miskovic@outlook.com', '$2y$10$.HUkh8fVLuhYV3tW1s9VX.PkFOnMnXiIsRt2HyDJ0V4bnG1eXIiTC', '$2y$10$roybuhmJ4FVrooIuidwLdeSRmUn8rxDG9K0PzIJsdfXOt646xHyOG', 1, NULL);
 
 --
@@ -339,7 +345,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `cegek`
 --
 ALTER TABLE `cegek`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `city`
